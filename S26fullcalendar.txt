@@ -65,8 +65,24 @@ bundle
 end
 db:seed
 
+05 Mostrando eventos en el calendario
+usando JSON
+    events: <%= raw @events.to_json %>
 
-
+06 Eventos con campos distintos. reescribiendo to_json
+si un campo se llama diferente
+events: <%= raw @events.to_json(methods: :start2) %>
+class Event < ApplicationRecord
+  def start2
+    start    
+  end
+end
+DANGER def start returning start
+  def to_json(options = {})
+    options[:except] = [:start2, :created_at]
+    options[:methods] = :start
+    super
+  end
 
 
 

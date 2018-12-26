@@ -2,6 +2,14 @@
 
 <h1>Events</h1>
 
+<div id='calendar'></div>
+
+<script>
+  $('#calendar').fullCalendar({
+    events: <%= raw @events.to_json(methods: :start2) %>
+  });
+</script>
+
 <table>
   <thead>
     <tr>
