@@ -20,5 +20,36 @@ info All dependencies
 ├─ fullcalendar@3.9.0
 ├─ jquery@3.3.1
 └─ moment@2.23.0
-
 rails g controller pages index
+
+https://fullcalendar.io/docs >introduction >loading the code
+app..js
+//= require jquery/dist/jquery
+//= require moment/moment
+//= require fullcalendar/dist/fullcalendar
+app.css
+ *= require fullcalendar/dist/fullcalendar
+
+<div id='calendar'></div>
+
+<script>
+  $('#calendar').fullCalendar({
+    weekends: false // will hide Saturdays and Sundays
+  });
+</script>
+
+03 Agregando eventos
+en documentacion ve event_data/events_array
+https://fullcalendar.io/docs/event-data
+<script>
+  $('#calendar').fullCalendar({
+    events: [
+      {
+        title: "evento 1",
+        start: '2018-12-26',
+        end: '2018-12-30'
+      }
+    ]
+  });
+</script>
+https://fullcalendar.io/docs/event-object

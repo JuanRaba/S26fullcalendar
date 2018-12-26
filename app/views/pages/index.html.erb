@@ -5,6 +5,17 @@
 
 <script>
   $('#calendar').fullCalendar({
-    weekends: false // will hide Saturdays and Sundays
+    events: [
+      {
+        title: "evento 1",
+        start: '2018-12-26',
+        end: '2018-12-30',
+        allDay: true
+      },
+      {
+        title: "evento 2",
+        start: '2018-12-25'
+      }
+    ]
   });
 </script>
