@@ -53,3 +53,21 @@ https://fullcalendar.io/docs/event-data
   });
 </script>
 https://fullcalendar.io/docs/event-object
+
+04 Guardando eventos en la bd
+rails g scaffold event title:string start:datetime
+db:migrate
+gem 'faker'
+bundle
+20.times do
+  start_at = Random.rand(10).days.ago + 5.days
+  Event.create!(title: Faker::Name.name, start: start_at)  
+end
+db:seed
+
+
+
+
+
+
+
