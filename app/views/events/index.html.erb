@@ -6,7 +6,7 @@
 
 <script>
   $('#calendar').fullCalendar({
-    events: <%= raw @events.to_json(methods: :start2) %>
+    events: '<%= events_path %>'
   });
 </script>
 
