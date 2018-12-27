@@ -6,7 +6,11 @@
 
 <script>
   $('#calendar').fullCalendar({
-    events: '<%= events_path %>'
+    events: '<%= events_path %>',
+    eventDrop: function( event, delta, revertFunc, jsEvent, ui, view ) { 
+      console.log("eventDrop");
+      console.log(event.start);
+    }
   });
 </script>
 

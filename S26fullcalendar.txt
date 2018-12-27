@@ -119,4 +119,11 @@ json.set! :editable, event.editable?
 otra forma (hay q quitar la interrogacion o no funciona)
 @events.to_json(methods: :editable)
 
+09 capturando el día a reagendar
+    events: '<%= events_path %>',
+    eventDrop: function( event, delta, revertFunc, jsEvent, ui, view ) { 
+      console.log("eventDrop");
+      console.log(event.start);
+    }
+
 
