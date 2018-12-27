@@ -150,5 +150,12 @@ https://fullcalendar.io/docs/eventClick
 borrar en el jsonbuilder
 json.url event_url(event, format: :json)
 
+12 Click modal
+incluye bootstrap con yarn (NO PUEDO, por nodejs, usare cdn, da problemas por el jquery duplicado, poner al final)
+crea _modal.html.erb con codigo de modal
+añade al index para renderear el modal
+<%= render 'modal' %>
+
+
 
 

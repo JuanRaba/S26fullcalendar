@@ -3,7 +3,7 @@
 <h1>Events</h1>
 
 <div id='calendar'></div>
-
+<%= render 'modal' %>
 <script>
   $('#calendar').fullCalendar({
     events: '<%= events_path %>',
@@ -23,7 +23,7 @@
         });
     },
     eventClick: function( event, jsEvent, view ) {
-      
+      $(".modal").modal();
     }
   });
 </script>
