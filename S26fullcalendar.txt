@@ -84,6 +84,39 @@ DANGER def start returning start
     super
   end
 
+07 eventos por Ajax
+http://localhost:3000/events.json
+    events: '<%= events_path %>'
+esto utiliza el json builder
+_event.json.jbuilder
+json.extract! event, :id, :title, :start, :created_at, :updated_at
+json.url event_url(event, format: :json)
 
+pero se puede hacer tmbn en el controler
+  def index
+    @events = Event.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @events.to_json }
+    end
+  end
+
+08 reagendando eventos
+campo de evento
+editable: true (en index marca todos)
+en el json builder (marca cada uno)
+json.set! :editable, true
+if Date.today < event.start
+  json.set! :editable, true
+end
+
+en el modelo
+  def editable?
+    Date.today < start
+  end
+json.set! :editable, event.editable?
+
+otra forma (hay q quitar la interrogacion o no funciona)
+@events.to_json(methods: :editable)
 
 

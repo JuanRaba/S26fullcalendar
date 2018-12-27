@@ -1,4 +1,8 @@
 class Event < ApplicationRecord
+  def editable?
+    Date.today < start
+  end
+
   def start2
     start    
   end
