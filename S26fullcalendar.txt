@@ -125,5 +125,30 @@ otra forma (hay q quitar la interrogacion o no funciona)
       console.log("eventDrop");
       console.log(event.start);
     }
+ver moment.js documentacion
+
+10 Actualizando el evento por Ajax
+
+ eventDrop: function( event, delta, revertFunc, jsEvent, ui, view ) { 
+      console.log(event.start.format());
+      $.ajax({
+          url: '/events/'+event.id,
+          type: 'PATCH',
+          dataType: 'json',
+          data: { 
+            event:{start: event.start.format() },
+            authenticity_token: '<%= form_authenticity_token %>' 
+          },
+          success: function (data) {
+            data
+          }
+        });
+    }
+
+11 Registrando el click en el evento
+https://fullcalendar.io/docs/eventClick
+borrar en el jsonbuilder
+json.url event_url(event, format: :json)
+
 
 
