@@ -205,4 +205,16 @@ mueve el script js a un .js, al hacer esto los helpers de ruby no funcionan
 <%= form_authenticity_token %> pasa a ser extraido de: <div id='calendar' data-token="<%= form_authenticity_token %>"></div>
 con $("#calendar").data('token') 
 
+18 intro a datetimepicker
+problemas con bootstrap4, warning " > bootstrap4-datetimepicker@5.2.3" has unmet peer dependency "bootstrap@4.0.0-alpha.6".
+en la doc usan $() q es doc ready, tendremos q usar turbolinks
 
+
+19 Integrando datetimepicker
+yarn add bootstrap4-datetimepicker
+yarn install
+
+ *= require bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.min
+
+//= require moment-timezone/moment-timezone
+//= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min

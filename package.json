@@ -2,6 +2,7 @@
   "name": "S26fullcalendar",
   "private": true,
   "dependencies": {
+    "bootstrap4-datetimepicker": "^5.2.3",
     "fullcalendar": "^3.9.0"
   }
 }
