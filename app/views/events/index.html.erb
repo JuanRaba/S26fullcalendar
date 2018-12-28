@@ -23,7 +23,14 @@
         });
     },
     eventClick: function( event, jsEvent, view ) {
-      $(".modal").modal();
+      $.ajax({
+          url: '/events/' + event.id +' /edit',
+          type: 'GET',
+          dataType: 'script',
+          success: function (data) {
+            data
+          }
+        });
     }
   });
 </script>

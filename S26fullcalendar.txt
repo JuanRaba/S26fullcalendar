@@ -151,11 +151,23 @@ borrar en el jsonbuilder
 json.url event_url(event, format: :json)
 
 12 Click modal
-incluye bootstrap con yarn (NO PUEDO, por nodejs, usare cdn, da problemas por el jquery duplicado, poner al final)
+incluye bootstrap con yarn (NO PUEDO, por nodejs, usare cdn, da problemas por el jquery duplicado, poner al final) no tiene animacion al aparecer
 crea _modal.html.erb con codigo de modal
 añade al index para renderear el modal
 <%= render 'modal' %>
+    eventClick: function( event, jsEvent, view ) {
+      $(".modal").modal();
+    }
 
-
-
-
+13 Render modal form
+dataType: 'script' hace q nuestro controler devuelva el edit.js.erb
+eventClick: function( event, jsEvent, view ) {
+      $.ajax({
+          url: '/events/' + event.id +' /edit',
+          type: 'GET',
+          dataType: 'script'
+        });
+    }
+edit.js.erb
+$(".modal-body").html("<%= j render 'form', event: @event%>");
+$(".modal").modal();
