@@ -171,3 +171,13 @@ eventClick: function( event, jsEvent, view ) {
 edit.js.erb
 $(".modal-body").html("<%= j render 'form', event: @event%>");
 $(".modal").modal();
+
+14 Actualizando por Ajax
+quitar el remote
+<%= form_with(model: event) do |form| %>
+debe haber respuesta js en controler
+creamos update.js.erb para cerrar el modal y actualizar el calendar
+$(".modal").modal('hide');
+$("#calendar").fullCalendar("refetchEvents");
+
+
