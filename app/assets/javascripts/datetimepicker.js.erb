@@ -1,0 +1,10 @@
+document.addEventListener(
+  "turbolinks:load",
+  function() {
+    $(".modal-body").on(
+      "focusin",
+      "#event_start",
+      function(){ $(this).datetimepicker();}
+    );
+  }
+)
