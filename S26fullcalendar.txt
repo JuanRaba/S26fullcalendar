@@ -180,4 +180,29 @@ creamos update.js.erb para cerrar el modal y actualizar el calendar
 $(".modal").modal('hide');
 $("#calendar").fullCalendar("refetchEvents");
 
+15 integrando alertas flash
+alerts y notice de siempre accedidas con flash[:notice]
+en el metodo setea esta variable
+
+16 variables flash y Ajax
+pone las alertas en un div para poder modificar por los js
+REFACTOR, el update devolvia json asiq cambia este comportamiento
+entonces surge el problema de que se abre y cierra el modal
+if ( $(".modal").hasClass('in') == true ){
+	$(".modal").modal('hide');
+}
+
+$('.flash').html("<%= j render 'layouts/alerts', locals:{flash: flash%>")
+WARNING la vista alerts tenia dentro un div flash, al renderear esto se anidan
+flash.now[:alert] para usarlas instantaneamente
+
+16 Detalles finales de la alerta flash
+flash.now[:notice] = "Event #{@event.title} was successfuly updated"
+
+17 Resolviendo la transformacion idempotente
+mueve el script js a un .js, al hacer esto los helpers de ruby no funcionan
+<%= events_path %> => '/events'
+<%= form_authenticity_token %> pasa a ser extraido de: <div id='calendar' data-token="<%= form_authenticity_token %>"></div>
+con $("#calendar").data('token') 
+
 
