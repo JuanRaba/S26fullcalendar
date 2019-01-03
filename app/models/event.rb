@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  validates :start, presence: true
   def editable?
     Date.today < start
   end

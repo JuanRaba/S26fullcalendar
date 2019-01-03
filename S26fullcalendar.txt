@@ -218,3 +218,35 @@ yarn install
 
 //= require moment-timezone/moment-timezone
 //= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
+
+20 Datetimepicker
+    <%= form.text_field :start %>
+
+$("#event_start").datetimepicker()
+
+21 Posicion del widget e Iconos
+https://eonasdan.github.io/bootstrap-datetimepicker/Options/
+{
+  widgetPositioning:
+  {
+    horizontal: 'auto',
+    vertical: 'bottom'
+  },
+  icons:
+  {
+    time: 'fa fa-clock-o',
+    date: 'fa fa-calendar',
+    up: 'fa fa-chevron-up',
+    down: 'fa fa-chevron-down',
+    previous: 'fa fa-chevron-left',
+    next: 'fa fa-chevron-right',
+    today: 'fa fa-calendar-check-o',
+    clear: 'fa fa-trash-o',
+    close: 'fa fa-close'
+  }
+}
+la tipografia fontawesome no viene agrega cdn
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+
